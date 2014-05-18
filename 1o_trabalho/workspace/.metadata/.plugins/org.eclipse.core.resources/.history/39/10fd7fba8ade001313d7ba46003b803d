@@ -1,0 +1,94 @@
+package br.ifes.tpa.ordenador;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import br.ifes.tpa.merger.BufferIn;
+import br.ifes.tpa.merger.BufferOut;
+import br.ifes.tpa.merger.Cliente;
+
+public class Ordenador {
+	
+	public static void dividirArquivoPorMemoria(String path, int memoria){
+		
+		int tamCliente = 423;//cada cliente ocupa 423 bytes em disco
+		int cabecalhoArquivo = 266;//cada arquivo gravado em disco tem 266 de metadados
+		
+		File file = new File(path);
+		
+		if (file.exists()){
+			
+			int i = path.lastIndexOf("/")+1;
+		
+			String nome = path.substring(i);
+		
+			System.out.println(nome);
+			
+			int qntPartes = 1;
+			
+			if(file.length() > memoria){
+				
+				qntPartes = (int) (file.length() / memoria);
+			
+				if(((file.length() - 266) % memoria) != 0)
+					qntPartes++;
+				
+			}
+			
+			System.out.println("tam arq: "+file.length());
+			System.out.println("qnt par: "+qntPartes);
+			
+			BufferIn bufferIn = new BufferIn(path,10);
+			
+			List<Cliente> clientes = new ArrayList<>();
+			
+			Cliente cliente = null;
+			
+			for(int p=0;p<qntPartes;p++){
+				
+				int tamParte = 0;
+				
+				while(
+					((tamParte + tamCliente + cabecalhoArquivo) < memoria)
+					&& 
+					((cliente = (Cliente)bufferIn.getProximo()) != null)
+					){
+					System.out.println("asas"+ tamParte +" "+ tamCliente +" "+ cabecalhoArquivo +" "+ ((tamParte + tamCliente + cabecalhoArquivo) < memoria));
+					//criar um arraylist que representará uma parte do arquivo que será ordenada
+					//será gravada em disco via BufferOut
+					
+					clientes.add(cliente);
+					
+					tamParte += tamCliente;
+					
+					System.out.println("HHH "+ (tamParte + tamCliente + cabecalhoArquivo));
+					
+				}
+				
+				//ordenar arraylist de clientes
+				
+				Collections.sort(clientes);
+				
+				BufferOut bufferOut = new BufferOut( path + "_part_" + p);
+				
+				for(Cliente c : clientes){
+					
+					bufferOut.setProximo(c);
+					
+				}
+				
+				bufferOut.fecharBufferOut();
+				
+				clientes.clear();
+			}
+		}
+			
+		
+		
+		
+	
+	}
+
+}

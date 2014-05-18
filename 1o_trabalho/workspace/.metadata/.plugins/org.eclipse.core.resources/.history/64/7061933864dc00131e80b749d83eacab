@@ -1,0 +1,18 @@
+package br.ifes.tpa.testes;
+
+import org.junit.Test;
+
+import br.ifes.tpa.gerador_de_registros.GeradoraDeRegistros;
+
+public class TesteGeradoraDeRegistros {
+
+	
+	@Test
+	public void testGerarRegistros(){
+		
+		GeradoraDeRegistros.gerarRegistros(10);
+		
+	}
+
+
+}

@@ -1,0 +1,29 @@
+package br.ifes.tpa.merger;
+
+public class MaquinaMerge extends MaquinaImpl{
+
+	
+	public MaquinaMerge() {
+		super();
+	}
+	
+	@Override
+	public void setBufferOut(BufferOut buffer) {
+		
+		super.setBufferOut(buffer);
+		
+	}
+	
+	public void computar(){
+		
+		int indiceDoMaior;
+		
+		if(super){
+			
+		}
+		
+	}
+
+	
+
+}

@@ -1,0 +1,22 @@
+package br.ifes.tpa.merger;
+
+public class MaquinaMerge<T> extends MaquinaImpl <T>{
+
+	
+	public MaquinaMerge() {
+		super();
+	}
+	
+	public void computar(){
+		
+		int indiceDoMaior;
+		
+		if(comparaveis.size()==0){
+			//é a primeira vez. os getProximo() de cada buffer devem ser carregados
+		}
+		
+	}
+
+	
+
+}

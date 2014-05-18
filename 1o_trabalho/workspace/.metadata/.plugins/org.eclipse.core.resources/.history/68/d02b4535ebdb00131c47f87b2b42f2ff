@@ -1,0 +1,23 @@
+package br.ifes.tpa.merger;
+
+public class Cliente {
+	
+	private int numero;
+	private String nome;
+	private String sobrenome;
+	private String endereco;
+	private String telefone;
+	private float saldo;
+	
+	public Cliente (float saldo){
+		
+		this.saldo = saldo;
+		
+		numero = (int)saldo;
+		nome = "padrão";
+		sobrenome = "sobrenome";
+		endereco = "endereco";
+		telefone = "telefone";
+	}
+
+}

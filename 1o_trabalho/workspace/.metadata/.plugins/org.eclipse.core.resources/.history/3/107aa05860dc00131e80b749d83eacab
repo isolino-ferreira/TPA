@@ -1,0 +1,9 @@
+package br.ifes.tpa.gerador_de_registros;
+
+public class GeradoraDeRegistros {
+
+	public GeradoraDeRegistros() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

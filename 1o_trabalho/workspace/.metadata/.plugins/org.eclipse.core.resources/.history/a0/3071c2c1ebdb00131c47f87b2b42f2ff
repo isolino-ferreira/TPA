@@ -1,0 +1,9 @@
+package br.ifes.tpa.merger;
+
+public class KWay {
+
+	public KWay() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

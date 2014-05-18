@@ -1,0 +1,62 @@
+package br.ifes.tpa.merger;
+
+import java.util.ArrayList;
+
+public class KWay {
+
+	private ArrayList<BufferIn> buffersIn;
+	
+	private ArrayList<Cliente> comparaveis;
+	
+	private BufferOut bufferOut;
+
+	public void addBuffersIn(BufferIn buffersIn) {
+		this.buffersIn.add(buffersIn);
+	}
+
+	public BufferOut getBufferOut() {
+		return bufferOut;
+	}
+
+	public void setBufferOut(BufferOut bufferOut) {
+		this.bufferOut = bufferOut;
+	}
+	
+	public void computar(){
+		
+		int indiceDoMaior;
+		
+		if(comparaveis.size()==0){
+			//é a primeira vez. os getProximo() de cada buffer devem ser carregados
+			for(BufferIn buffer: buffersIn){
+				
+				Cliente cliente = (Cliente) buffer.getProximo();
+				
+				comparaveis.add(cliente);
+				
+			}
+		}
+		
+		indiceDoMaior = getIndiceDoMenor();
+		
+	}
+	
+	private int getIndiceDoMenor(){
+		
+		Cliente reg = comparaveis.get(0);
+		
+		for(Cliente registro : comparaveis){
+			
+			if (reg.getSaldo() >= registro.getSaldo()){
+				
+				reg = registro;
+				
+			}
+			
+		}
+		return comparaveis.indexOf(reg);
+	}
+	
+	
+
+}

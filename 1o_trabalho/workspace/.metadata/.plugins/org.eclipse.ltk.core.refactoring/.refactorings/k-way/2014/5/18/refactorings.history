@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;br.ifes.tpa.merger.BufferOut.fechaBufferOut()&apos; to &apos;fecharBufferOut&apos;&#x0A;- Original project: &apos;k-way&apos;&#x0A;- Original element: &apos;br.ifes.tpa.merger.BufferOut.fechaBufferOut()&apos;&#x0A;- Renamed element: &apos;br.ifes.tpa.merger.BufferOut.fecharBufferOut()&apos;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;fechaBufferOut&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;br.ifes.tpa.merger{BufferOut.java[BufferOut~fechaBufferOut" name="fecharBufferOut" references="true" stamp="1399048388896" version="1.0"/>
+</session>

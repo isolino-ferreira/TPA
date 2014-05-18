@@ -1,0 +1,9 @@
+package br.ifes.tpa.testes;
+
+public class TesteGeradoraDeRegistros {
+
+	public TesteGeradoraDeRegistros() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

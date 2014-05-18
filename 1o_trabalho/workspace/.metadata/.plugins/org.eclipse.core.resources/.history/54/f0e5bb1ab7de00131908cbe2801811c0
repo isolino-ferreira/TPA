@@ -1,0 +1,25 @@
+package br.ifes.tpa.testes;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import br.ifes.tpa.application.Application;
+
+public class TesteApplication {
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		
+		Application.run();
+	}
+
+}

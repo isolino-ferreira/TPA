@@ -1,0 +1,26 @@
+package br.ifes.tpa.testes;
+
+import org.junit.Test;
+
+import br.ifes.tpa.gerador_de_registros.GeradoraDeRegistros;
+import br.ifes.tpa.ordenador.Ordenador;
+
+public class TesteOrdenador {
+	
+	private String PATH_ARQUIVO = "/home/isolino/Documentos/TPA/1o_trabalho/workspace/k-way/arquivos/isolino.tpa";
+
+	private int KB = 1000;
+	private int MB = 1000*1000;
+	private int GB = 1000*1000*1000;
+	
+	@Test
+	public void testDividirArquivoMenorQueMemoria(){
+		
+		// TamArquivo(n) = 423*n + 266
+		// TamArquivo(2364) = 1.021.515 bytes ≃ 1MB
+		GeradoraDeRegistros.gerarRegistros(2364);
+		
+		Ordenador.dividirArquivoPorMemoria(PATH_ARQUIVO, 250*1000*1000);
+		
+	}
+}

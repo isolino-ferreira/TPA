@@ -1,0 +1,9 @@
+package br.ifes.tpa.merger;
+
+public abstract class MaquinaImpl<T> implements Maquina<T> {
+
+	public MaquinaImpl() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

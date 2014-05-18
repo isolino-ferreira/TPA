@@ -1,0 +1,13 @@
+package br.ifes.tpa.merger;
+
+public interface Maquina<T> {
+	
+	public void computar();
+	
+	public void addBufferIn(BufferIn bfi);
+	
+	public void setBUfferOut(BufferOut bfo);
+	
+	public boolean existeEntrada();
+
+}

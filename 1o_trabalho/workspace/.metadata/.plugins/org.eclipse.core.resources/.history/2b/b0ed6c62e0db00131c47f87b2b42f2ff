@@ -1,0 +1,5 @@
+package br.ifes.tpa.merger;
+
+public interface Maquina<T> {
+
+}

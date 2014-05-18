@@ -1,0 +1,33 @@
+package br.ifes.tpa.merger;
+
+import java.util.ArrayList;
+
+public abstract class MaquinaImpl<T> implements Maquina<T> {
+	
+	private ArrayList<BufferIn> buffersIn;
+	
+	private BufferOut bufferOut;
+	
+	public MaquinaImpl(){
+		
+		this.buffersIn = new ArrayList<BufferIn>();
+		
+	}
+
+	public void addBufferIn(BufferIn buffer){
+		
+		this.buffersIn.add(buffer);
+		
+	}
+	
+	public void setBufferOut(BufferOut buffer){
+		
+		this.bufferOut = buffer;
+		
+	}
+	
+	public void computar(){
+		//lancar FinalComputar exception
+	}
+
+}

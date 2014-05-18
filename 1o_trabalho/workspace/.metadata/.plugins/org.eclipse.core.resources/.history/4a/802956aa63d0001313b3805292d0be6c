@@ -1,0 +1,55 @@
+package br.ifes.tpa.merger;
+
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+
+public class BufferOut extends Buffer {
+	
+	private ObjectOutputStream arquivo;
+	
+	public BufferOut(int tam, String nomeArquivo){
+		setTam(tam);
+		setRegistros(new Object[tam]);
+		try {
+			arquivo = new ObjectOutputStream(new FileOutputStream(new File(nomeArquivo)));
+		} catch (IOException e) {	e.printStackTrace();
+		}
+	}
+	
+	public BufferOut(String nomeArquivo){
+		this(100, nomeArquivo);
+	}
+
+	public void setProximo(Object o){
+		
+		if(getPonteiro()==getTam()-1){
+			escreveEmDisco();
+		}
+		getRegistros()[getPonteiro()] = o;
+	}
+
+	private void escreveEmDisco() {
+		
+		OutputStream buffer = new BufferedOutputStream(arquivo);
+		ObjectOutput output;
+		
+		try {
+			output = new ObjectOutputStream(buffer);
+			for(Object o : getRegistros()){
+				output.writeObject(o);
+			}
+			output.close();
+			arquivo.close();
+		} catch (IOException e) {	e.printStackTrace();
+		} finally{
+			setPonteiro(0);
+		}
+		
+	}
+
+}

@@ -1,0 +1,22 @@
+package br.ifes.tpa.merger;
+
+public class MaquinaMerge extends MaquinaImpl{
+
+	
+	public MaquinaMerge() {
+		super();
+	}
+	
+	public void computar(){
+		
+		int indiceDoMaior;
+		
+		if(super){
+			
+		}
+		
+	}
+
+	
+
+}

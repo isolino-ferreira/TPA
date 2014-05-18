@@ -1,0 +1,19 @@
+INDEX VERSION 1.126+/home/isolino/Documentos/TPA/1o_trabalho/workspace/.metadata/.plugins/org.eclipse.jdt.core
+1024239901.index
+2863384745.index
+2209425009.index
+3120248022.index
+1422305395.index
+387710483.index
+1726988027.index
+2685721645.index
+1893567717.index
+4278438484.index
+1419034960.index
+3472760493.index
+2842984226.index
+3583227633.index
+3452486205.index
+1923002560.index
+572065292.index
+3366860076.index

@@ -1,0 +1,72 @@
+package br.ifes.tpa.application;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Gerenciador {
+	
+	private String PATH_ARQUIVOS = "/home/isolino/Documentos/TPA/1o_trabalho/workspace/k-way/arquivos/";
+	
+	private int TAM_ARQUIVO = 50*423+266;
+	
+	private int MEMORIA = 6*1000;
+	
+	private int NUM_REGISTROS = 50;
+	
+	//para facilitar, faz aos pares e depois junta os resultados
+	//0 para juntar tudo
+	private int[] NIVEIS_KWAY = {2,0};
+
+	public String getPATH_ARQUIVOS() {
+		return PATH_ARQUIVOS;
+	}
+
+	public void setPATH_ARQUIVOS(String pATH_ARQUIVOS) {
+		PATH_ARQUIVOS = pATH_ARQUIVOS;
+	}
+
+	public int getTAM_ARQUIVO() {
+		return TAM_ARQUIVO;
+	}
+
+	public void setTAM_ARQUIVO(int tAM_ARQUIVO) {
+		TAM_ARQUIVO = tAM_ARQUIVO;
+	}
+
+	public int getMEMORIA() {
+		return MEMORIA;
+	}
+
+	public void setMEMORIA(int mEMORIA) {
+		MEMORIA = mEMORIA;
+	}
+
+	public int[] getNIVEIS_KWAY() {
+		return NIVEIS_KWAY;
+	}
+
+	public void setNIVEIS_KWAY(int[] nIVEIS_KWAY) {
+		NIVEIS_KWAY = nIVEIS_KWAY;
+	}
+	
+	public Iterator<Integer> getNiveisIterator(){
+		
+		ArrayList<Integer> li = new ArrayList<>();
+		
+		for(int io: NIVEIS_KWAY)
+			li.add(new Integer(io));
+		
+		return li.iterator();
+	}
+
+	public int getNUM_REGISTROS() {
+		return NUM_REGISTROS;
+	}
+
+	public void setNUM_REGISTROS(int nUM_REGISTROS) {
+		NUM_REGISTROS = nUM_REGISTROS;
+	}
+	
+	
+
+}

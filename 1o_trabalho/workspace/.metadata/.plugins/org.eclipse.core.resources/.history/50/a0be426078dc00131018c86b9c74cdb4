@@ -1,0 +1,17 @@
+package br.ifes.tpa.testes;
+
+import org.junit.Test;
+
+import br.ifes.tpa.ordenador.Ordenador;
+
+public class TesteOrdenador {
+	
+	private String PATH_ARQUIVO = "/home/isolino/Documentos/TPA/1o_trabalho/workspace/k-way/arquivos/isolino.tpa";
+
+	@Test
+	public void testDividirArquivo(){
+		
+		Ordenador.dividirArquivoPorMemoria(PATH_ARQUIVO, 10);
+		
+	}
+}

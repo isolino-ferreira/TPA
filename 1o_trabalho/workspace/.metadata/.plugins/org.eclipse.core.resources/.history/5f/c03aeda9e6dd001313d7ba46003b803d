@@ -1,0 +1,79 @@
+package br.ifes.tpa.merger;
+
+import java.io.Serializable;
+
+public class Cliente implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int numero;
+	private String[] nome;
+	private String[] sobrenome;
+	private String[] endereco;
+	private String[] telefone;
+	private float saldo;
+	
+	public Cliente (float saldo){
+		
+		this.saldo = saldo;
+		
+		numero = (int)saldo;
+		nome = new String[50];
+		sobrenome = new String[50];
+		endereco = new String[250];
+		telefone = new String[20];
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public String[] getNome() {
+		return nome;
+	}
+
+	public void setNome(String[] nome) {
+		this.nome = nome;
+	}
+
+	public String[] getSobrenome() {
+		return sobrenome;
+	}
+
+	public void setSobrenome(String[] sobrenome) {
+		this.sobrenome = sobrenome;
+	}
+
+	public String[] getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String[] endereco) {
+		this.endereco = endereco;
+	}
+
+	public String[] getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String[] telefone) {
+		this.telefone = telefone;
+	}
+
+	public float getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(float saldo) {
+		this.saldo = saldo;
+	}
+	
+	
+
+}

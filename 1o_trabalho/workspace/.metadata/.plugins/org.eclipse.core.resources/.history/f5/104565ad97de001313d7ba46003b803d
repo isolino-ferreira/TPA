@@ -1,0 +1,14 @@
+package br.ifes.tpa.application;
+
+public class Gerenciador {
+	
+	private String PATH_ARQUIVOS = "/home/isolino/Documentos/TPA/1o_trabalho/workspace/k-way/arquivos/";
+	
+	private int TAM_ARQUIVO = 50*423+266;
+	
+	private int MEMORIA = 6*1000;
+	
+	//para facilitar, faz aos pares e depois junta os resultados
+	private int NIVEIS_KWAY = 2; 
+
+}

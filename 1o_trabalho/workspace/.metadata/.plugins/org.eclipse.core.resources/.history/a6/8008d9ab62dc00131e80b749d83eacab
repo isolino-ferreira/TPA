@@ -1,0 +1,25 @@
+package br.ifes.tpa.gerador_de_registros;
+
+import br.ifes.tpa.merger.BufferOut;
+
+public class GeradoraDeRegistros {
+	
+	public static void gerarRegistros(int tam){
+		
+		gerarRegistros("/home/isolino/Documentos/TPA/1o_trabalho/workspace/k-way/arquivos/isolino.tpa",	tam	);
+	}
+	
+	public static void gerarRegistros(String path, int tam){
+		
+		BufferOut bufferOut = new BufferOut(path);
+		
+		for(int i = 0; i < tam; i++){
+			
+			
+			
+		}
+			
+	}	
+	
+
+}

@@ -1,0 +1,6 @@
+package br.ifes.tpa.ordenador;
+
+
+public class Comparador extends Comparator {
+
+}

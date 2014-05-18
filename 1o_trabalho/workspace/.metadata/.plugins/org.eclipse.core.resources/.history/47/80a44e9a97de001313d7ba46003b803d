@@ -1,0 +1,8 @@
+package br.ifes.tpa.application;
+
+public class Gerenciador {
+	
+	Private String PATH_ARQUIVOS = "/home/isolino/Documentos/TPA/1o_trabalho/workspace/k-way/arquivos/";
+	
+
+}

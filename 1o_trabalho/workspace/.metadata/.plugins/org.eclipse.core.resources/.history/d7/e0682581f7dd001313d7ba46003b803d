@@ -1,0 +1,45 @@
+package br.ifes.tpa.testes;
+
+import java.io.File;
+
+import org.junit.Test;
+
+import br.ifes.tpa.gerador_de_registros.GeradoraDeRegistros;
+import br.ifes.tpa.ordenador.Ordenador;
+
+public class TesteOrdenador {
+	
+	private String PATH_ARQUIVO = "/home/isolino/Documentos/TPA/1o_trabalho/workspace/k-way/arquivos/isolino.tpa";
+	private String PATH_TEMP = "";
+	private int KB = 1000;
+	private int MB = 1000*1000;
+	private int GB = 1000*1000*1000;
+	
+	public void pastaTemp(){
+		
+		File file = new File(PATH_ARQUIVO);
+				
+		if (file.exists()){
+			
+			int i = PATH_ARQUIVO.lastIndexOf("/")+1;
+		
+			String temp = PATH_ARQUIVO.substring(i);
+			
+			PATH_TEMP = PATH_ARQUIVO.substring(0, i-1) + "temp/" + "";
+		}
+		
+		
+	}
+	
+	@Test
+	public void testDividirArquivoMenorQueMemoria(){
+		
+		// TamArquivo(n) = 423*n + 266
+		// TamArquivo(2364) = 1.021.515 bytes ≃ 1MB
+		
+		GeradoraDeRegistros.gerarRegistros(2364);
+		
+		Ordenador.dividirArquivoPorMemoria(PATH_ARQUIVO, 250*1000*1000);
+		
+	}
+}

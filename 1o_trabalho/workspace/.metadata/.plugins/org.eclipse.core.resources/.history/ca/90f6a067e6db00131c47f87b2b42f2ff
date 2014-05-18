@@ -1,0 +1,9 @@
+package br.ifes.tpa.merger;
+
+public class MaquinaMerge {
+
+	public MaquinaMerge() {
+		super();
+	}
+
+}

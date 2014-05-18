@@ -1,0 +1,100 @@
+package br.ifes.tpa.merger;
+
+import java.util.ArrayList;
+
+public class KWay {
+
+	private ArrayList<BufferIn> buffersIn;
+	
+	private ArrayList<Cliente> comparaveis;
+	
+	private BufferOut bufferOut;
+	
+	private boolean iniciado = false;
+	
+	public KWay(){
+		comparaveis = new ArrayList<>();
+		buffersIn = new ArrayList<>();
+	}
+
+	public void addBuffersIn(BufferIn buffersIn) {
+		this.buffersIn.add(buffersIn);
+	}
+
+	public BufferOut getBufferOut() {
+		return bufferOut;
+	}
+
+	public void setBufferOut(BufferOut bufferOut) {
+		this.bufferOut = bufferOut;
+	}
+	
+	public void computar(){
+		
+		if(comparaveis.size()==0){
+			
+			//é a primeira vez. os getProximo() de cada buffer devem ser carregados
+			for(BufferIn buffer: buffersIn){
+				
+				Cliente cliente = (Cliente) buffer.getProximo();
+				
+				comparaveis.add(cliente);
+				
+			}
+			
+			iniciado = true;
+		}
+		
+		int indiceDoMenor = getIndiceDoMenor();
+		
+		bufferOut.setProximo(comparaveis.get(indiceDoMenor));
+		
+		comparaveis.remove(indiceDoMenor);
+		
+		Cliente cliente = (Cliente)buffersIn.get(indiceDoMenor).getProximo();
+		
+		if (cliente != null)
+			
+			comparaveis.add(indiceDoMenor, cliente);
+		
+		else{
+			
+			comparaveis.remove(indiceDoMenor);
+			
+			buffersIn.get(indiceDoMenor).fecharBUfferIn();
+			
+			buffersIn.remove(indiceDoMenor);
+			
+		}
+		
+	}
+	
+	private int getIndiceDoMenor(){
+		
+		Cliente reg = comparaveis.get(0);
+		
+		for(Cliente registro : comparaveis){
+			
+			if (reg.getSaldo() >= registro.getSaldo()){
+				
+				reg = registro;
+				
+			}
+			
+		}
+		return comparaveis.indexOf(reg);
+	}
+	
+	public void run(){
+		
+		do{
+			
+			computar();
+		
+		}while( (iniciado==true) && (comparaveis.size()!=0) );
+		
+	}
+	
+	
+
+}
